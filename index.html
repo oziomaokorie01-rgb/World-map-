@@ -1,28 +1,50 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Dark Theme Map</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Espresso Systems World Map</title>
+
+  <!-- favicon + CSS -->
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <style>
-    #map { height: 100vh; width: 100%; }
-  </style>
 </head>
 <body>
-  <div id="map"></div>
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script>
-    const map = L.map('map').setView([20, 0], 2);
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="images/logo.png" alt="logo" class="logo">
+      <h1>Espresso Systems World Map</h1>
+    </div>
+  </header>
 
-    // Dark tiles from Carto
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
-      subdomains: 'abcd',
-      maxZoom: 19
-    }).addTo(map);
-    
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="script.js"></script>
+  <!-- Main -->
+  <main>
+    <section id="map-wrap">
+      <div id="map"></div>
+      <div id="legend" class="legend"></div>
+    </section>
+
+    <section id="cards-wrap">
+      <div class="cards-container">
+        <div class="cards-section">
+          <h2>Past Events</h2>
+          <div id="past-cards" class="cards-grid"></div>
+        </div>
+        <hr class="section-sep" />
+        <div class="cards-section">
+          <h2>Future Events</h2>
+          <div id="future-cards" class="cards-grid"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts (always at the end, before </body>) -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
