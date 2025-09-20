@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Espresso Systems World Map</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="images/logo.png" type="image/png">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <div class="header">
+    <img src="images/logo.png" alt="logo">
+    <h1>Espresso Systems World Map</h1>
+  </div>
+
+  <div class="container">
+    <div id="map"></div>
+    <div class="controls">
+      <button onclick="map.fitBounds(L.featureGroup(markers).getBounds().pad(0.2))">Fit to all</button>
+    </div>
+
+    <div class="sections">
+      <div class="section">
+        <h2>Past Events</h2>
+        <div id="pastList"></div>
+      </div>
+
+      <div class="section">
+        <h2>Future Events</h2>
+        <div id="futureList"></div>
+      </div>
+    </div>
+  </div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
