@@ -1,13 +1,11 @@
 \
 /* script.js - final Espresso Systems World Map (flat, reliable) */
 const map = L.map('map', { preferCanvas: true }).setView([20,0], 2);
-
-// Dark basemap (Carto Dark)
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-  subdomains: 'abcd',
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors',
   maxZoom: 19
 }).addTo(map);
+
 
 // small icons
 const pastIcon = L.icon({ iconUrl: 'images/past.png', iconSize: [20,26], iconAnchor:[10,26], popupAnchor:[0,-24] });
